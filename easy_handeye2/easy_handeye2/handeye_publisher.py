@@ -12,7 +12,7 @@ class HandeyePublisher(rclpy.node.Node):
     def __init__(self):
         super().__init__('handeye_publisher')
 
-        self.declare_parameter('name', descriptor=ParameterDescriptor(type=ParameterType.PARAMETER_STRING))
+        self.declare_parameter('name', '')
         name = self.get_parameter('name').get_parameter_value().string_value
 
         self.get_logger().info(f'Loading the calibration with name {name}')
